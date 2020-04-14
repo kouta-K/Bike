@@ -1,0 +1,6 @@
+<% if @members.any? %>
+    <h1><%= @group.name %></h1>
+    <%= render "users/users_index", users: @members %>
+<% else %>
+<p>まだメンバーはいません</p>
+<% end %>

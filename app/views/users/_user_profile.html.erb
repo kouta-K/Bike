@@ -1,0 +1,24 @@
+<div class="profile">   
+    <div class="profile-image-name">
+        <%= render "layouts/profile_image", user: @user %>
+        <div class="name"><p><%= @user.name %></p></div>
+        <div class="follow-unfollow-button"><%= render "layouts/follow_button", user: @user %></div>
+    </div>
+    <div class="profile-follow">
+        <span><p class="age"><%= @user.age %>歳</p></span>
+        <span class="follow"><%= link_to "フォロー#{@user.followings.count}", follow_user_path(@user) %></span>
+        <span class="follower"><%= link_to "フォロワー#{@user.followers.count}", followers_user_path(@user) %></span>
+    </div>
+    
+    <div class="profile-menu">
+        <span class="profile-group"><%= link_to "所属グループ #{activate_group_count(@user)}", group_user_path(@user.id), class: "mygroup" %></span>
+        <% if current_user == @user %>
+            <span class="profile-edit"><%= link_to "プロフィール編集", edit_user_path(current_user), class: "user-edit" %></span>
+        <% end %>
+    </div>
+</div>
+<div class="profile-bar">
+    <span class="profile-post"><%= link_to "投稿", user_path(@user), class: "#{post_url}" %></span>
+    <!-- <span class="profile-group-message"><%= link_to "グループでの投稿", messages_user_path(@user) %></span> -->
+    <span class="profile-favorite"><%= link_to "おきにいり", favorites_user_path(@user), class: "#{fav_url}" %></span>
+</div>

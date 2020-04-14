@@ -1,0 +1,23 @@
+<%= form_with(model: @user, local: true, class: "signup-form") do |f| %>
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :age, "年齢" %>
+    <%= f.number_field :age, min: 18,step: 1 %>
+    
+    <%= f.label :email, "メール" %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "パスワード確認" %>
+    <%= f.password_field :password_confirmation %>
+    
+    <%= f.label :image, "画像" %>
+    <%= f.file_field :image %>
+    
+    <div class="signup-btn">
+        <%= f.submit "編集", class: "btn btn-success" %>
+    </div>
+<% end %>

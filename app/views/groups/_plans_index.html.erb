@@ -1,0 +1,19 @@
+<div class="index-plans">
+    <% @plans.each do |plan| %>
+        <div class="index-plan">
+            <% if group_activate_member?(plan.group) %>
+                <div class="gather-time">集合時間: <%= plan.datetime.strftime("%Y-%m-%d %H:%M") %></div>
+            <% end %>
+            <p class="gather-place">集合場所: <%= plan.place %></p>
+            <div class="about-plan">
+                予定について
+                <% if group_activate_member?(plan.group) %>
+                    <div><%= link_to "参加者 #{plan.has_user.count}人", participates_path(plan_id: plan.id), class: "member" %></div>
+                <% end %>
+                <p class="content"><%= plan.content %></p>
+            </div>
+            <a href=<%= plan_path(plan) %> class="show-plan-path"></a>
+        </div>
+    <% end %>
+    <%= paginate @plans %>
+</div>

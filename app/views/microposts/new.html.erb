@@ -1,0 +1,47 @@
+<div class="post-form">
+    <%= form_with(model: @micropost, local: true) do |f| %>
+        <div class="textarea">
+            <%= f.text_area :content, class: "form-text-area" %>
+        </div>
+        <div class="post-count-error">文字数が上限を超えました</div>
+        <div id="image-form">
+            <%= f.fields_for :images do |s| %>
+                <div>
+                    <%= s.file_field :image %>
+                </div>
+            <% end %>
+        </div>
+        <div class="post">
+            <%= f.submit "投稿", class: "btn-post", id: "post-submit" %>
+        </div>
+    <% end %>
+</div>
+
+<script>
+    $(function(){
+       $(".form-text-area").keyup(function(){
+           var len = $(this).val().length;
+           if(len > 255){
+               $(this).css({
+                   backgroundColor: "rgba(255, 0, 0, 0.4)"
+               });
+               $(".post-count-error").show();
+               $("#post-submit").prop("disabled", true);
+               $("#post-submit").css({
+                   backgroundColor: "rgba(192,192,192, 0.7)",
+                   cursor: "default"
+               });
+           }else{
+               $(this).css({
+                   backgroundColor: "white"
+               });
+               $(".post-count-error").hide();
+               $("#post-submit").prop("disabled", false);
+               $("#post-submit").css({
+                   backgroundColor: "yellowgreen",
+                   cursor: "pointer"
+               });
+           }
+       }) 
+    });
+</script>

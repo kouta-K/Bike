@@ -1,0 +1,9 @@
+<% users.each do |user| %>
+    <div class="follow-user">
+        <%= render "layouts/profile_image", user: user %>
+        <div class="follow-menu">
+            <span class="name"><%= link_to user.name, user %></span>
+            <%= render "layouts/follow_button", user: user %>
+        </div>
+    </div>
+<% end %>

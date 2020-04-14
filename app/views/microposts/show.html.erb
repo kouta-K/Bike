@@ -1,0 +1,67 @@
+<div class="show-post">
+    <%= render "layouts/profile_image", user: @micropost.user %>
+    <p class="name"><%= link_to @micropost.user.name, user_path(@micropost.user.id) %></p>
+    <div class="date">
+        <%= @micropost.created_at.strftime("%Y-%m-%d %H:%M") %>
+    </div>
+    <p class="content">
+        <%= @micropost.content %>
+    </p>
+</div> 
+<p class="show-post-image">
+    <% unless @micropost.images.empty? %>
+        <span class="prev prev-modal1"><</span>
+        <span class="slide-images">
+            <% @micropost.images.each do |img| %>
+                <span class="modal"><%= image_tag img.image.url, class: "post-image" %></span>
+            <% end %>
+        </span>
+        <span class="next next-modal1">></span>
+    <% end %>
+</p>
+<div class="post-menu">
+    <span class="reply-modal"><i class="far fa-comment"></i></span>
+    <%= render "microposts/reply_form", object: @micropost %>
+    <%= render "layouts/favorite_button", object: @micropost %>
+    <% if correct_user?(@micropost.user) %>
+        <a class="delete" data-confirm="are you sure? " rel="nofollow" data-method="delete" href=<%= @micropost %>><i class="far fa-trash-alt"></i></a>
+    <% end %>
+</div>
+
+<div class="reply">
+        <div class="reply-index">
+        <%= render "layouts/post_index", posts: @microposts %>
+</div>
+</div>
+
+<script>
+   document.addEventListener("turbolinks:load", function() {
+        $(".show-post-image").find(".slide-images").on("click", function(){
+          if($(this).find(".modal").hasClass("modal-style1")){
+            $(this).find(".modal").removeClass("modal-style1");
+            $(this).find("img").removeClass("modal-style2");
+            $(this).find("img").addClass("post-image");
+            $(this).next().removeClass("next-modal");
+            $(this).next().addClass("next-modal1"); 
+            $(this).prev().removeClass("prev-modal");
+            $(this).prev().addClass("prev-modal1");
+          }else{
+            $(this).find(".modal").addClass("modal-style1");
+            $(this).find("img").addClass("modal-style2");
+            $(this).find("img").removeClass("post-image");
+            $(this).next().addClass("next-modal");
+            $(this).next().removeClass("next-modal1"); 
+            $(this).prev().addClass("prev-modal");
+            $(this).prev().removeClass("prev-modal1");
+          }
+        });
+        
+        $(".reply-modal").on("click", function(){
+           $(this).next().fadeIn(); 
+        });
+        
+        $(".close-button").on("click", function(){
+            $(".reply-modal-wrapper").fadeOut(); 
+        });
+    });
+</script>

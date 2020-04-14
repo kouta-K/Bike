@@ -1,0 +1,18 @@
+<div class="plan-form">
+    <h1>予定<%= string %></h1>
+    <%= form_with(model: @plan, local: true) do |f| %>
+        <%= f.label :datetime, "集合日時" %>
+        <div class="plan-datetime">
+            <%= f.datetime_select :datetime, use_month_numbers: true %>
+        </div>
+        
+        <%= f.label :place, "場所" %>
+        <%= f.text_field :place, class: "place" %>
+    
+        <%= f.label :content, "内容" %>
+        <%= f.text_area :content, class: "content" %>
+        <div class="submit">
+            <%= f.submit string %>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,58 @@
+<div class="show-group">   
+    <div class="show-group-top">
+        <%= render "groups/group_image", group: @group %>
+        <p class="name"><%= @group.name %></p>
+        <div class="show-group-admin">
+            <% if admin_user?(@group) %>
+                <%= link_to "管理", admin_member_group_path(@group), class: "admin-button" %>
+            <% else %>
+                <% if group_activate_member?(@group) %>
+                    <%= link_to "退会", member_path(@group.members.find_by(user_id: current_user.id)), method: :delete, data: {confirm: "退会しますか？"}, class: "withdraw" %>
+                <% end %>
+            <% end %>
+            
+            <% unless group_activate_member?(@group) %>
+                <div class="group-request-button">
+                    <% if send_request?(@group) %>
+                        <%= form_with(model: @group.members.find_by(user_id: current_user.id), local: true, method: :delete) do |f| %>
+                            <%= f.submit "取消", class: "delete" %>
+                        <% end %>
+                    <% else %>
+                        <%= form_with(model: Member.new, local: true) do |f| %>
+                            <%= hidden_field_tag :group_id, @group.id %>
+                            <%= f.submit "申請", class: "submit" %>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="show-group-menu">
+        <div class="show-group-creater">
+            <p>作成者: <%= link_to "#{@group.user.name}", @group.user %></p>
+        </div>
+        <div><%= link_to "メンバー #{ @group.members.where(activate: true).count}人",  member_group_path(@group.id) %></div>
+    </div>
+    <div class="show-group-introduce-title">グループ紹介</div>
+    <p class="show-group-introduce"><%= @group.introduce %></p>
+    
+    <div class="section">
+        <div>
+            <ul class="tabs-nav">
+                <li><a href="#group-chat-tab">グループチャット</a></li>
+                <li><a href="#plan-tab">予定一覧 <%= @group.plans.count %></a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="tabs" id="group-chat-tab">
+                <%= render "message_form" %>
+            </div>
+            <div class="tabs" id="plan-tab">
+                <% if group_activate_member?(@group) %>
+                    <div class="plan-add"><%= link_to "予定追加", new_plan_path(group_id: @group) %></div>
+                <% end %>
+                <%= render "plans_index" %>
+            </div>
+        </div>
+    </div>
+</div> 

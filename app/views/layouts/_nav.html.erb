@@ -1,0 +1,38 @@
+<div id="nav">
+    <span class="top-link"><i class="fas fa-motorcycle"></i></span>
+    <div class="nav-menu">
+        <div><a href=<%= root_url %> class="btn-side btn-top black2"><i class="fas fa-motorcycle"></i> Top</a></div>
+        <div><a href=<%= searches_path %> class="btn-side btn-search black2"><i class="fas fa-search btn-top"></i> 検索</a></div>
+        <div><a href=<%= user_path(current_user.id) %> class="btn-side btn-pro black2"><i class="fas fa-user"></i> profile</a></div>
+        <div><a href=<%= new_micropost_path %> class="btn-side btn-tweet black2"><i class="fas fa-paper-plane"></i> つぶやく</a></div>
+        <div><a href=<%= groups_path %> class="btn-side btn-group black2"><i class="fas fa-users"></i> グループ</a></div>
+        <div class="calendar-link"><%= link_to "カレンダー", calendars_path, class: "btn-side black2" %></div>
+        <div><a href=<%= notifications_path %> class="btn-side btn noti black2">
+            <i class="far fa-bell"></i> 通知
+            <% if unchecked_notification? %>
+                <i class="fa fa-circle notification-circle"></i>
+            <% end %>
+        </a></div>
+        <div><a href=<%= invited_user_path(current_user) %> class="btn-side btn-request black2"><i class="fas fa-hands-helping"></i>リクエスト</a></div>
+        <div><%= link_to "Logout",logout_path,  method: :delete, class: "btn-side btn-logout black2"%></div>
+    </div>
+    <div class="navbar close">
+        <span class="nav-button">
+            <i class="fas fa-bars"></i>
+        </span>    
+    </div>
+</div>
+
+<script>
+    $(function(){
+        
+        var $nava = $(".nav-menu").find("a");
+        $nava.each(function(i, e){
+            if(($(e).attr("href") === location.pathname) || ($(e).attr("href") === location.href)){
+                $(e).removeClass("black2")
+                $(e).addClass("green2");
+            }
+            
+        });
+    });
+</script>

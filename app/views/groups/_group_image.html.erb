@@ -1,0 +1,5 @@
+<% if group.image? %>
+    <%= image_tag group.image.url, class: "group-img" %>
+<% else %>
+    <%= image_tag "group_default.png", class: "group-img" %>
+<% end %>

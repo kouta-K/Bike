@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  content: Hello
+  user_id: 1
+  image: 8642a9b9-d93b-4233-b277-f669199315a9.jpg
+  
+two:
+  id: 2
+  content: hello
+  user_id: 1
+

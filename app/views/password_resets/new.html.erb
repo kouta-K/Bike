@@ -1,0 +1,10 @@
+<div class="password_reset">
+    <h2>パスワードリセット</h2>
+    <%= form_with(url: password_resets_path, local: true,  scope: "password_reset") do |f| %>
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email,placeholder: "アカウントのEmailを入力してください", class: "email" %>
+        
+       <div class="submit"><%= f.submit "送信" %></div>
+    <% end %>
+    <div class="login-path">アカウントをお持ちの方は<%= link_to "こちら", login_path %></div>
+</div>

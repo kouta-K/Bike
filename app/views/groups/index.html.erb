@@ -1,0 +1,16 @@
+<div class="group-index">
+    <div class="header">
+        <div class="group-create"><%= link_to "作成", new_group_path, class: "create" %></div>
+        <div class="search-form">
+            <%= form_tag(groups_path, method: :get) do %>
+                <label for="search"><i class="fas fa-search"></i></label>
+                <%= text_field_tag :search, nil, placeholder: "グループ名で検索" %>
+                <div class="search-button"><%= submit_tag "検索" %></div>
+                <%= select_tag 'option', options_for_select({新しい順: 1, 古い順: 2, メンバー数: 3}, params[:option]||1) %>
+            <% end %>
+        </div>
+        <%= paginate @groups %>
+    </div>
+    <%= render "groups/group_index" %>
+</div>
+<%= paginate @groups %>

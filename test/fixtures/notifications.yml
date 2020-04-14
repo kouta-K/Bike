@@ -1,0 +1,13 @@
+one:
+    id: 1
+    user_id: 2
+    visited_id: 1
+    action: "request"
+    checked: false
+
+two:
+    id: 2
+    user_id: 1
+    visited_id: 2
+    action: "request"
+    checked: true

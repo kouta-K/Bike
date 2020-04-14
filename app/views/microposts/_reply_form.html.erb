@@ -1,0 +1,31 @@
+<div class="reply-modal-wrapper">
+    <div class="reply-form">
+        <span class="close-button"><i class="fas fa-times"></i></span>
+        <h2>返信</h2>
+        <div class="reply-count-error">文字数が上限を超えました</div>
+        <%= form_with(model: Micropost.new, local: true, namespace: "#{object.id}") do |f| %>
+            <%= f.hidden_field :reply_id,value: object.id %>
+            <%= f.text_area :content, class: "reply-form-text" %>
+            <div><%= f.submit "返信" %></div>
+        <% end %>
+    </div>
+</div>
+
+<script>
+    $(function(){
+       $(".reply-form-text").keyup(function(){
+           var len = $(this).val().length;
+           if(len > 255){
+               $(this).css({
+                   backgroundColor: "rgba(255, 0, 0, 0.4)"
+               });
+               $(".reply-count-error").show();
+           }else{
+               $(this).css({
+                   backgroundColor: "white"
+               });
+               $(".reply-count-error").hide();
+           }
+       }) 
+    });
+</script>

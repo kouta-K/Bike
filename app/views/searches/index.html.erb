@@ -1,0 +1,10 @@
+<div class="search-form">
+    <%= form_tag(searches_path, method: :get) do %>
+        <label for="search"><i class="fas fa-search"></i></label>
+        <%= text_field_tag :search, nil, placeholder: "投稿内容を検索" %>
+        <div class="search-button"><%= submit_tag "検索" %></div>
+    <% end %>
+</div>
+<%= paginate @microposts %>
+<%= render "layouts/post_index", posts: @microposts %>
+<%= paginate @microposts %>

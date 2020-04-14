@@ -1,0 +1,1849 @@
+@media(min-width: 1400px){ 
+  #micropost_images_attributes_1_image, #micropost_images_attributes_2_image{
+   display: none;
+  }
+  .next-modal1, .prev-modal1{
+    position: relative;
+    z-index: 98;
+    font-size: 25px;
+    top: -50px;
+    color: gray;
+    cursor: pointer;
+  }
+  textarea, select{
+    border: 1px inset rgba(192, 192, 192, 0.6);
+  }
+ 
+  input:focus{
+    outline: none;
+  }
+  
+  .container{
+    display: grid;
+    grid-template-columns: 19% 40% 3% 38%;
+  }
+
+  /*main*/
+  .main{
+    grid-column: 2 ;
+    padding-left: 30px;
+  }
+  
+  
+  
+  /* ナビゲーションバー */
+  #nav{
+      position: fixed;
+      margin-left: 4%;
+      grid-column: 1;
+      justify-content: center;
+      border-right: 1px solid rgba(192, 192, 192, 0.7);
+      padding-right: 30px;
+      height: 100%;
+      background-color: white;
+      z-index: 888;
+  }
+  .navbar{
+    display: none;
+  }  
+  .nav-menu{
+      display: grid;
+      grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px;
+  }
+  #nav .top-link{
+    display: none;
+  }
+  #nav a{
+    display: block;
+    padding: 10px;
+    margin-left: 30px;
+  }
+  #nav a:hover{
+    color: green;
+  }
+  #nav .calendar-link{
+    display: none;
+  }
+  
+  .notification-circle{
+    color: orange;
+  }
+  
+  .btn-side{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 150%;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  /*ページネーション*/
+  
+  .pagination{
+    margin-bottom: 10px;
+    margin-left: 8%;
+  }
+  .pagination a{
+    text-decoration: none;
+  }
+  .pagination .current{
+    color: white;
+    background-color: yellowgreen;
+  }
+  
+  .pagination .page{
+    display: inline-block;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+  
+  .pagination .page a{
+    color: black;
+    background-color: rgba(192,192,192,0.4);
+    display: block;
+  }
+  
+  .pagination .gap{
+    display: none;
+  }
+  .pagination .next{
+    display: inline-block;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+  .pagination .next a{
+    color: black;
+    background-color: rgba(192,192,192,0.4);
+    display: block;
+  }
+  
+  .pagination .prev{
+    display: inline-block;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+  
+  .pagination .prev a{
+    color: black;
+    background-color: rgba(192,192,192,0.4);
+    display: block;
+  }
+  
+  .pagination .first{
+    display: none;
+  }
+  .pagination .last{
+    display: none;
+  }
+  
+  .pagination .translation_missing{
+    display: none;
+  }
+  
+  
+  
+  /*flash*/
+  .flash{
+    text-align: center;
+    margin: 0 20%;
+    height: 50px;
+    width: 60%;
+  }
+  .flash .alert-danger{
+    border-radius: 10px;
+    background-color: red;
+    opacity: 0.8;
+    color: black;
+  }
+  .flash .alert-success{
+    border-radius: 10px;
+    background-color: lightgreen;
+    opacity: 0.5;
+    color: black;
+  }
+  
+  
+  /*profile*/
+  .profile-image-name{
+    display: grid;
+    grid-template-columns: 100px 10px 1fr 80px;
+  }
+  .follow-unfollow-button{
+    margin-top:25px;
+    grid-column: 4;
+  }
+  
+  .profile form{
+    grid-column: 4;
+    grid-row: 2;
+  }
+  .profile .name{
+    grid-column:3;
+    grid-row: 1;
+  }
+  .profile .name p{
+    word-break: break-all;
+    font-size: 25px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  .profile .profile-follow{
+    display: grid;
+    grid-template-columns: 100px 0.5fr 0.5fr;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .profile-follow .age{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .profile-follow .follow{
+    grid-column: 2;
+  }
+  .profile-follow .follower{
+    grid-column: 3;
+  }
+  .profile .profile-menu{
+    display: grid;
+    grid-template-columns: 100px 0.5fr 0.5fr;
+    font-size: 15px;
+    margin-bottom: 10px;
+  } 
+  .profile-menu .profile-group{
+    grid-column: 2;
+  }
+  .profile-menu .profile-edit{
+    grid-column: 3;
+  }
+  .profile a{
+    margin-right: 5px;
+    text-decoration: none;
+  }
+  .profile a:link, .profile a:visited{
+    color: black;
+  }
+  .profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .profile-bar{
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    border-bottom: 1px yellowgreen solid;
+    margin-bottom: 15px;
+  }
+  .profile-bar .profile-post{
+    grid-column: 2;
+  }
+  .profile-bar .profile-favorite{
+    grid-column: 3;
+  }
+  .profile-bar a:hover, .profile-bar a:hover{
+    color: green;
+  }
+  .profile-bar a{
+    text-decoration: none;
+  }
+  .black, .black2, .black3{
+    color: black;
+  }
+  .green, .green2, .green3{
+    color: green;
+  }
+  
+  
+  
+  /*フォローしているユーザー一覧*/
+  .follow-user{
+    height: 90px;
+    display: grid;
+    grid-template-columns: 70px 30px 1fr;
+  }
+  
+  .follow-user a{
+    text-decoration: none;
+    color: black;
+  }
+  .follow-user .profile-img{
+    grid-column: 1;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+  .follow-user .follow-menu{
+    grid-column: 3;
+  }
+  
+  
+  
+  /*フォローボタン*/
+  .follow-button{
+    background-color: #0099FF;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 17px;
+  }
+  .unfollow-button{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 17px;
+  }
+  
+  
+  
+  
+  /*post form*/
+  .form-text-area{
+    width: 70%;
+    height: 160px;
+    margin-top: 50px;
+    font-size: 20px;
+  }
+  .btn-post{
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 20px;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 35px;   /* 余白       */
+    background    : yellowgreen;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+  }
+  .post{
+    width: 70%;
+    text-align: right;
+  }
+  
+  
+  
+   /* top */
+  .mypost li{
+    list-style-type: none;
+    border-bottom: 1px solid yellowgreen;
+  }
+  ul.mypost{
+    padding-left: 0;
+  }
+  
+  
+  
+  /* signup form */
+  .signup-form{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+  }
+  .signup-btn{
+    grid-column: 2;
+    text-align: center;
+  }
+  .signup h1{
+    text-align:center;
+  }
+  .signup-form label{
+    grid-column: 2;
+    margin-top: 30px;
+  }
+  #user_image{
+    font-size: 100%;
+  }
+  .signup-btn input{
+    margin-top: 10px;
+    width: 120px;
+    background: yellowgreen;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px
+  
+  }
+  .signup-form>input{
+    grid-column: 2;
+    border-radius: 3px;
+    border-style: ridge;
+    height: 30px;
+    font-size: 20px;
+  }
+  .signup p{
+    text-align: center;
+  }
+  
+  .signup-form .field_with_errors{
+    grid-column: 2;
+    margin-top: 13px;
+  }
+  .signup-form .field_with_errors input{
+    border-radius: 3px;
+    height: 30px;
+    font-size: 20px;
+    width: 100%;
+    border-color: red;
+    border-style: ridge;
+    border-width: thin;
+  }
+  
+  .signup .errors{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+  }
+  .signup .errors ul{
+    grid-column: 2;
+    color: red;
+  }
+  
+  
+  /* login form */
+  .login-form{
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+  }
+  .login-btn{
+    grid-column: 2;
+    text-align: center;
+  }
+  .login h1{
+    text-align:center;
+  }
+  .login-form label{
+    grid-column: 2;
+    margin-top: 30px;
+  }
+  .login-btn input{
+    margin-top: 10px;
+    width: 120px;
+    background: yellowgreen;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px
+  
+  }
+  .login-form>input{
+    grid-column: 2;
+    border-radius: 3px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .login p{
+    text-align: center;
+  }
+  
+  .login .login-error{
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    color: red;
+  }
+  .login .login-error li{
+    grid-column: 2;
+  }
+  
+  
+  /* 投稿一覧 */
+  .posts{
+    display: grid;
+    grid-template-columns: 80px 3% 1fr;
+    grid-template-rows: 30px 30px 1fr;
+  }
+  .post-favorite{
+    display: grid;
+    grid-template-columns: 100px 30% 1fr;
+    height: 26px;
+    border-bottom: 1px rgba(192, 192, 192, 0.5) solid;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  .favorite-button{
+    grid-column: 3;
+  }
+  .post-favorite .reply-modal-menu{
+    grid-column: 2;
+  }
+  .favorite-button button{
+    border-style: none;
+  }
+  .posts a{
+    text-decoration: none;
+    color: black;
+  }
+  .posts a:hover{
+    color: yellowgreen;
+  }
+  
+  
+  .posts .profile-img{
+    display: inline-block;
+    grid-column: 1;
+    grid-row: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .posts .name{
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 17px;
+    word-break: break-all;
+    margin: 0;
+  }
+  .posts .post-created-at{
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 14px;
+    margin: 0;
+    word-break: break-all;
+  }
+  
+  
+  .posts .content{
+    grid-column: 3;
+    grid-row: 3; 
+    margin-top: 8px;
+    margin-bottom: 0;
+    word-break: break-all;
+    position: relative;
+  }
+  .posts .post-image{
+    position: absolute;
+    height: 130px;
+    width: 130px;
+  }
+  .posts .post-link{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .posts .post-link:hover{
+    background-color: rgba(192, 192, 192, 0.5);
+  }
+  .posts .micro-link{
+    position: relative;
+    z-index: 3;
+    display: block;
+  }
+  .disable{
+    display: none;
+  }
+  .modal{
+    position: absolute;
+    z-index: 99;
+    display: none;
+  }
+  .modal-style2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    display: block;
+    z-index: 999;
+  }
+  .modal-style1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(192, 192, 192, 0.8);
+    z-index: 999;
+  }
+  .next-modal{
+    position: fixed;
+    top: 50%;
+    right: 25%;
+    margin: auto;
+    z-index: 1000;
+    font-size: 60px;
+    cursor: pointer;
+  }
+  .prev-modal{
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    z-index: 1000;
+    font-size: 60px;
+    cursor: pointer;
+  }
+  
+  .posts .slide-images{
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+  }
+  .post-favorite .reply-modal{
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  /*ポストの詳細から返信する部分*/
+  .reply-form{
+    position: absolute;
+    top: 20%;
+    left: 34%;
+    background-color: white;
+    border-radius: 14px;
+  }
+  .reply-form .close-button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    text-align: right;
+    cursor: pointer;
+  }
+  .reply-form .fa-times{
+    font-size: 25px;
+  }
+ 
+  .reply-form h2{
+    
+    width: 300px;
+    margin: 30px 100px 0 100px;
+  }
+  .reply-form form{
+    padding: 10px 100px 30px 100px ; 
+  }
+  .reply-form form textarea{
+    width: 300px;
+    height: 180px;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  .reply-form div>input{
+    background-color: yellowgreen;
+    color: white;
+    height: 30px;
+    width: 50px;
+    border-radius: 3px;
+    font-size: 15px;
+  }
+  .reply-form form div{
+    text-align: right;
+  }
+  .reply-modal-wrapper{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(192,192,192, 0.6);
+    z-index: 9999;
+  }
+
+  
+  
+  /*お気に入り*/
+  .favorite button{
+    background-color: white;
+    padding: 0 0;
+    border: white;
+  }
+  .fa-star{
+    font-size: 20px;
+  }
+  .star-favorite{
+    color: #FFFF00;
+  }
+  
+  .star-unfavorite:hover{
+    color: yellow;
+  }
+  button:focus {
+  	outline:0;
+  }
+  
+  
+  
+  /* show post */
+  .show-post{
+    display: grid;
+    grid-template-columns: 80px 3% 1fr;
+    grid-template-rows: 50px 30px 1fr;
+    margin-bottom: 5px;
+  }
+  
+  .show-post .date{
+    grid-column: 3;
+    grid-row: 2;
+  }
+  
+  .show-post>.profile-img{
+    grid-column: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .show-post .name{
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 25px;
+    margin: 0;
+    word-break: break-all;
+  }
+  .show-post .name a{
+    text-decoration: none;
+    color: black;
+  }
+  .show-post .name:visited{
+    color: black;
+  }
+  .show-post .name:link{
+    color: black;
+  }
+  
+  .show-post p{
+    grid-column: 3;
+    grid-row: 3;
+    word-break: break-all;
+    margin: 0;
+  }
+  
+  .show-post-image .post-image{
+    display: inline-block;
+    position: absolute;
+    height: 130px;
+    width: 130px;
+  }
+  .show-post-image .slide-images{
+    display: inline-block;
+    position: relative;
+    width: 130px;
+    height: 130px;
+  }
+  .show-post-image{
+    margin-left: 100px;
+    margin-top: 3px;
+  }
+  .post-menu{
+    display: grid;
+    grid-template-columns: 80px 3% 1fr 1fr 1fr;
+    border-bottom: yellowgreen 1px solid;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+  .post-menu .reply-modal{
+    grid-column: 3;
+  }
+  .post-menu .favorite{
+    grid-column: 4;
+  }
+  .post-menu .favorite button{
+    padding: 0;
+  }
+  .post-menu a{
+    grid-column: 5;
+    display: block;
+  }
+  .post-menu .delete{
+    background-color:  #FF0461;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    width: 30px;
+    height: 25px;
+    border-radius: 2px;
+    border-radius: 5px;
+  }
+  
+  
+  
+  
+  /*返信先の投稿*/
+   .reply_to{
+    display: grid;
+    grid-template-columns: 80px 3% 1fr;
+    grid-template-rows: 30px 20px 60%;
+    margin-bottom: 5px;
+  }
+  
+  .reply_to .date{
+    grid-column: 3;
+    grid-row: 2;
+  }
+  
+  .reply_to>.profile-img{
+    grid-column: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .reply_to .name{
+    grid-column: 3;
+    grid-row: 1;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  .reply_to .name:visited{
+    color: black;
+  }
+  .reply_to .name:link{
+    color: black;
+  }
+  
+  .reply_to p{
+    grid-column: 3;
+    grid-row: 3;
+    word-break: break-all;
+  }
+  .reply_to .post-image{
+    display: block;
+    height: 130px;
+    width: 130px;
+  }
+  
+  
+  
+  
+  /*検索バー*/
+  .search-form{
+    margin-bottom: 15px;
+  }
+  #search{
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px ridge ;
+    font-size: 20px;
+  }
+  .search-form .fa-search{
+    font-size: 25px;
+  }
+  .search-button{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+  }
+  .search-button input{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    font-size: 15px;
+  
+  }
+  
+  /*カレンダー*/
+  .side{
+    grid-column: 4;
+  }
+  
+  .side-calendar .plan a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
+  }
+  .side-calendar .blue{
+    background-color: #66CCFF;
+    border-radius: 5px;
+    margin-bottom: 3px;
+  }
+  .side-calendar .orange{
+    background-color: #FFCC33;
+    border-radius: 5px;
+    margin-bottom: 3px;
+  }
+  .side-calendar .participate{
+    margin-left: 10px;
+    display: inline-block;
+    background-color: #66CCFF;
+    color: white;
+    width: 65px;
+    border-radius: 5px;
+    height: 25px;
+    text-align: center;
+  }
+  .side-calendar .no-participate{
+    display: inline-block;
+    background-color: #FFCC33;
+    color: white;
+    width: 65px;
+    border-radius: 5px;
+    height: 25px;
+    text-align: center;
+  }
+  .side-calendar .today{
+    background-color: rgba(147, 256, 171, 0.5);
+  }
+  .calendar-heading a{
+    text-decoration: none;
+  }
+  .calendar-heading a:visited{
+    color: blue;
+  }
+  .calendar-heading a:link{
+    color: blue;
+  }
+  
+  .side-calendar{
+    position: fixed;
+    width: 37%;
+  }
+  
+  /*グループ一覧ページ*/
+  .group-index .header{
+    display: grid;
+    grid-template-columns: 1fr 85px;
+    padding-bottom: 10px;
+  }
+  
+  .group-index .group-create{
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .group-index .create{
+    display: block;
+    background-color: yellowgreen;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    width: 85px;
+    height: 30px;
+    text-decoration: none;
+    border-radius: 7px;
+    color: white ;
+  }
+  
+  .group-index .groups .group{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    border-bottom: 1px yellowgreen ridge;
+  }
+  .group-index .groups .name-introduce{
+    grid-column: 1;
+  }
+  .name-introduce .introduce{
+    margin-top: 3px;
+    margin-left: 10px;
+    word-break: break-all;
+  }
+  .name-introduce .introduce-title{
+    margin-left: 10px;
+  }
+  .name-introduce .name{
+    margin: 0 0 0 5px;
+    word-break: break-all;
+  }
+  .groups .group-image-name{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    margin: 8px 0;
+  }
+  .group-index .groups a{
+    text-decoration: none;
+    color: black;
+  }
+  .group-index .groups a:hover{
+    color: yellowgreen;
+  }
+  .group-index .groups .group-name{
+    font-size: 25px;
+    border-bottom: 1px ridge #C0C0C0;
+  }
+  .group-index .groups .index{
+    grid-column: 2;
+    border-left: 1.3px ridge;
+    border-color: rgba(192,192,192, 0.4);
+    margin: 4px;
+    padding-left: 4px;
+  }
+  .group-index .groups .index p{
+    word-break: break-all;
+  }
+  .groups .group-img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+  
+  
+  
+  /*ユーザーのグループのタイトル*/
+  .user-plan-top{
+    font-size: 25px;
+    word-break: break-all;
+    margin: 5px;
+  }
+  
+  
+  /*グループ作成フォーム*/
+  .group-form h1{
+    font-size: 30px;
+    text-align: center;
+  }
+  .group-form form{
+    display:grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+  .group-form label{
+    grid-column: 2;
+    margin-top: 20px;
+  }
+  .group-form form > input{
+    grid-column: 2;
+    display: block;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px black ridge;
+  }
+  .group-form .image{
+    font-size: 15px;
+  }
+  .group-form form > textarea{
+    display: block;
+    grid-column: 2;
+    height: 80px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+  }
+  .group-form div{
+    grid-column: 2;
+    text-align: center;
+  }
+  .group-form .submit{
+    margin-top: 10px;
+    width: 120px;
+    background: yellowgreen;
+    color: white;
+    padding: 7px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px
+  }
+  
+  .group-form .field_with_errors{
+    display: block;
+    grid-column: 2;
+    margin-top: 13px;
+  }
+  .group-form .field_with_errors{
+    text-align: left;
+  }
+  .group-form .field_with_errors label{
+    grid-column: 2;
+  }
+  .group-form .field_with_errors input{
+    border-radius: 3px;
+    height: 30px;
+    font-size: 20px;
+    width: 100%;
+    border: 1px red ridge;
+  }
+  .group-form .field_with_errors textarea{
+    display: block;
+    border-radius: 3px;
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-color: red;
+    border-style: ridge;
+  }
+  
+  
+  
+  
+  /*グループ内チャット*/
+  .messages{
+    display: grid;
+    grid-template-columns: 60px 5% 1fr;
+    grid-template-rows: 30px 15px 1fr;
+    margin-bottom: 8px;
+  }
+  
+  .messages a{
+    text-decoration: none;
+  }
+  .messages a:visited{
+    color: black;
+  }
+  .messages a:link{
+    color: black;
+  }
+  
+  .messages>.profile-img{
+    grid-column: 1;
+    grid-row: 1;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .messages .name{
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .messages .name a:hover{
+    color: yellowgreen;
+  }
+  .messages a{
+    font-size: 19px;
+  }
+  .messages .post-created-at{
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 13px;
+    
+  }
+  
+  .messages p{
+    grid-column: 3;
+    grid-row: 3; 
+    margin-top: 8px;
+    margin-bottom: 0;
+    word-break: break-all;
+  }
+  
+  .messages .post-image{
+    display: block;
+    height: 130px;
+    width: 130px;
+  }
+  
+  .message-form{
+    display: grid;
+    grid-template-columns: 1fr 45px;
+    margin-bottom: 15px;
+  }
+  .message-form-submit{
+    display: grid;
+    grid-template-columns: 1fr 48px;
+  }
+  .message-form .text{
+    grid-column: 1;
+    display: inline-block;
+    height: 25px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    border: 1px gray solid;
+    border-radius: 5px;
+  }
+  .message-form .submit{
+    grid-column: 2;
+    margin-left: 3px;
+    display: inline-block;
+    text-align: center;
+    width: 45px;
+    height: 28px;
+    background-color: yellowgreen;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+  .message-form .image{
+    display: block;
+  }
+  
+  .message-delete{
+    display: grid;
+    grid-template-columns: 60px 5% 1fr;
+    margin-bottom: 20px;
+  }
+  .message-delete a{
+    grid-column: 3;
+    background-color: #FF0461;
+    color: white;
+    width: 30px;
+    height: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  
+  /*グループの詳細ページのメニュー*/
+  .show-group-top{
+    display: grid;
+    grid-template-columns: 70px 1fr 150px;
+  }
+  
+  .show-group-top .name{
+    grid-column: 2;
+    font-size: 29px;
+    word-break: break-all;
+    margin: 10px 0 0 10px;
+  }
+  .show-group-top .group-img{
+    grid-column: 1;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .show-group-top a{
+    text-decoration: none;
+  }
+  .show-group-top .request{
+    color: black;
+    padding-top: 3px;
+  }
+  
+  .show-group-top .show-group-admin{
+    grid-column: 3;
+    margin-top: 15px;
+  }
+  
+  .show-group-admin .withdraw{
+    grid-row: 1;
+    width: 70px;
+    height: 28px;
+    background-color: #FF0461;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+  }
+  .group-request-button .submit{
+    width: 70px;
+    height: 30px;
+    background-color: #66CCFF;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .group-request-button .delete{
+    width: 70px;
+    height: 30px;
+    background-color: #FF0461;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .show-group-creater a{
+    text-decoration: none;
+    color: black;
+  }
+  .show-group-creater p{
+    word-break: break-all;
+    margin: 5px 0;
+  }
+  .show-group-menu{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 5px;
+  }
+  .show-group-menu a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px rgba(192, 192, 192, 0.8) ridge;
+    padding-bottom: 2px;
+  }
+  
+  .show-group-introduce{
+    border-bottom: rgba(192,192,192, 0.4) 1px ridge;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-top: 5px;
+    word-break: break-all;
+  }
+  
+  .show-group-introduce-title{
+    margin-top: 10px;
+  }
+ 
+  .show-group .admin-button{
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 14px;
+    color: black;
+    border: 1px solid rgba(192,192,192,0.5);
+    border-radius: 6px;
+  }
+  
+   .show-group-creater a:hover, .show-group-menu a:hover, .admin-button:hover{
+    color: yellowgreen;
+  }
+  .show-group .section ul{
+    padding: 0 0;
+    display: grid; 
+    grid-template-columns: 50% 50%;
+    border-bottom: 1px solid black;
+  }
+  .show-group .section li{
+    height: 100%;
+    list-style-type: none;
+  }
+  .show-group .section li a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color: black;
+  }
+
+  .show-group .section li .active{
+    color: white;
+    background-color: rgba(154, 205, 50, 0.8);
+  }
+  .show-group .section .plan-add{
+    margin-bottom: 10px;
+  }
+  .show-group .section .plan-add a{
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    color: white;
+    text-decoration: none;
+  }
+ 
+  
+  
+  
+  /*通知画面*/
+  .notification a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .notification a:hover{
+    color: yellowgreen;
+  }
+  
+  .notification p{
+    margin-bottom:  5px;
+  }
+  
+  .notification div{
+    font-size: 13px;
+  }
+  .notification{
+    border-bottom: 1px rgba(192,192,192,0.2) ridge;
+  }
+  
+  
+  
+  
+  /*プラン詳細*/
+  .show-plan-top{
+    border-bottom: 1px rgba(192,192,192,0.4) ridge;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  .plan-place-datetime p{
+    font-size: 18px;
+    margin-bottom: 2px;
+    word-break: break-all;
+  }
+  .show-plan .show-plan-top{
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+  .show-plan-top form{
+    margin-top: 20px;
+  }
+  .show-plan-top .plan-place-datetime{
+    display: grid;
+    grid-template-rows: 70% 30%;
+  }
+  
+  .show-plan-top .edit{
+    display: inline-block;
+    text-align: center;
+    width: 70px;
+    color: black;
+    height: 27px;
+    background-color: white;
+    border: 1px rgba(192,192,192,0.8) ridge;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .show-plan .member{
+    text-decoration: none;
+    color: black;
+    margin-right: 30px;
+  }
+  .show-plan .participate-plan{
+    background-color: #66CCFF;
+    color: white;
+    height: 27px;
+    width: 70px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .show-plan .no-participate-plan{
+    background-color: #FF0461;
+    color: white;
+    height: 27px;
+    width: 70px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .show-plan .delete{
+    text-align: center;
+    display: inline-block;
+    background-color: #FF0461;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+  }
+  .show-plan .fa-trash-alt{
+    color: white;
+  }
+  .show-plan form{
+    display: inline-block;
+  }
+  .show-plan .group{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .show-plan .plan-content{
+    word-break: break-all;
+    margin-top: 5px;
+    border-bottom: 1px rgba(192,192,192,0.4) ridge;
+  }
+  
+  .show-plan .show-plan-footer{
+    display: grid;
+    grid-template-columns:  80% 20%;
+  }
+  .show-plan .no-participate-group a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px rgb(192,192,192) ridge;
+  }
+  .show-plan .no-participate-group a:hover{
+    color: yellowgreen;
+  }
+  .show-plan .show-plan-footer a:hover{
+    color: yellowgreen;
+  }
+  .show-plan .member:hover{
+    color: yellowgreen;
+  }
+  
+  
+  
+  
+  /*リクエスト一覧*/
+  .request-index{
+    display: grid;
+    height: 85px;
+    grid-template-columns: 80px 30px 1fr;
+  }
+  .request-index .request-name-button{
+    grid-column: 3;
+    display: grid;
+    grid-template-rows: 30px 50px;
+  }
+  
+  .request-index img{
+    width: 70px;
+    height: 70px;
+  }
+  .request-index .name{
+    display: inline;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px rgba(192,192,192,0.5) ridge;
+    
+  }
+  .request-buttons form{
+    display: inline-block;
+  }
+  .request-buttons .yes{
+    width: 50px;
+    height: 25px;
+    background-color: #66CCFF;
+    color: white;
+    border-radius: 7px;
+    font-size: 15px;
+  }
+  
+  .request-buttons .no{
+    width: 50px;
+    height: 25px;
+    background-color: red;
+    color: white;
+    border-radius: 7px;
+    font-size: 15px;
+  }
+  
+  
+  /*予定に参加しているメンバー一覧*/
+  .plan-member-top a{
+    text-decoration: none;
+    color: black;
+  }
+  .plan-member-top a:hover{
+    background-color: rgba(192,192,192,0.5);
+  }
+  
+  
+  
+  
+  /*グループに登録されている予定一覧*/
+  .index-plan{
+    position: relative;
+    border-bottom: 1px ridge yellowgreen;
+    margin-bottom: 10px;
+  }
+  .index-plans a{
+    text-decoration: none;
+    color: black;
+  }
+  .index-plans .gather-time{
+    text-align: right;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+  }
+  .index-plans .gather-place{
+    word-break: break-all;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .index-plans .member{
+    position: relative;
+    z-index: 99;
+  }
+  .index-plans .show-plan-path:hover{
+    background-color: rgba(192, 192, 192, 0.1);
+  }
+  .index-plans a:hover{
+    color: yellowgreen;
+  }
+  .about-plan .content{
+    margin-top: 3px;
+  }
+  .index-plan .show-plan-path{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+ 
+  
+  
+  
+  /*予定追加ページ*/
+  .plan-form h1{
+    text-align: center;
+  }
+  .plan-form form{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    
+  }
+  .plan-form label{
+    grid-column: 2;
+    margin-bottom: 10px;
+  }
+  .plan-form .place{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    border: rgb(192, 192, 192) solid 1px;
+  
+  }
+  .plan-form .content{
+    grid-column: 2;
+    height: 80px;
+    font-size: 18px;
+  }
+  .plan-form .plan-datetime{
+    grid-column: 2;
+  }
+  .plan-form .plan-datetime select{
+    height: 25px;
+    font-size: 17px;
+    background-color: white;
+    margin-bottom: 10px;
+  }
+  .plan-form .submit{
+    grid-column: 2;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .plan-form .submit input{ 
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 7px;
+    background-color: yellowgreen;
+    color: white;
+    font-size: 20px;
+  }
+  .map{
+    grid-column: 2;
+  }
+  .map .map-button{
+    margin-bottom: 10px;
+    border: rgb(192, 192, 192) solid 1px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .plan-form .field_with_errors{
+    grid-column: 2;
+  }
+
+  .plan-form .field_with_errors> input{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    border: 1px red ridge;
+  }
+  .plan-form .field_with_errors textarea{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    border: 1px red ridge;
+  }
+  
+  
+  /*マップ*/
+  #gmap {
+    width:100%;
+   height:500px;
+  }
+  #map, #map2 {
+    height: 400px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+    width: 80%;
+    margin-top: 30px;
+  }
+  
+  
+  /*管理者画面*/
+  .admin-container{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  .admin-container .admin-request, .admin-container .admin-member, .admin-container .admin-invited, .admin-container .group-form{
+    grid-column: 2;
+  }
+  .admin-menu{
+    position: fixed;
+    border-right: 1px ridge rgba(192, 192, 192, 0.5);
+    margin-right: 20px;
+    padding-right: 30px;
+    height: 100%;
+  }
+  .admin-menu a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  .admin-menu .group-url{
+    color: black;
+  }
+  .admin-menu a:hover{
+    color: yellowgreen;
+  }
+  
+  .admin-menu input{
+    width: 80px;
+    height: 30px;
+    background-color: #FF0461;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .admin-member .withdraw{
+    display: inline-block;
+    padding: 3px 6px;
+    background-color: #FF0461;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+  }
+  .admin-member .follow-menu div{
+    margin-top: 4px;
+  }
+  
+  .admin-container .admin-button{
+    display: none;
+  }
+  .admin-menu .admin-menu-button{
+    display: none;
+  }
+  
+  
+  /*プロフィールのグループメッセージ一覧*/
+  .profile-messages{
+    display: grid;
+    grid-template-columns: 80px 3% 1fr;
+    grid-template-rows: 30px 30px 1fr;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.5);
+  }
+  .profile-messages a{
+    text-decoration: none;
+    color: black;
+  }
+  .profile-messages a:hover{
+    color: yellowgreen;
+  }
+  
+  
+  .profile-messages>.profile-img{
+    grid-column: 1;
+    grid-row: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .profile-messages .name{
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .profile-messages .post-created-at{
+    grid-column: 3;
+    grid-row: 2;
+  }
+  
+  .profile-messages p{
+    grid-column: 3;
+    grid-row: 3; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+    word-break: break-all;
+  }
+  .profile-messages .post-image{
+    display: block;
+    height: 130px;
+    width: 130px;
+  }
+  
+  .menu{
+    display: none;
+  }
+  
+  
+  /*パスワードリセット*/
+  .password_reset h2{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .password_reset form{
+    grid-template-columns: 33% 34% 33%;
+    display: grid;
+  }
+  
+  .password_reset .email{
+    grid-column: 2;
+    height: 27px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+ 
+  .password_reset .submit{
+    grid-column: 2;
+    text-align: center;
+  }
+  .password_reset .submit input{
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 7px;
+    background-color: yellowgreen;
+    color: white;
+    font-size:  18px;
+  }
+  
+  .password_reset label{
+    grid-column: 2;
+  }
+  .password_reset a{
+    grid-column: 2;
+  }
+  
+  .password_reset .login-path{
+    text-align: center;
+    margin-top: 10px;
+  }
+  .password_reset .login-path a{
+    text-decoration: none;
+  }
+  
+  
+  /*パスワード再設定ページ*/
+  .password_edit h2{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .password_edit form{
+    grid-template-columns: 33% 34% 33%;
+    display: grid;
+  }
+  
+  .password_edit .password{
+    grid-column: 2;
+    height: 27px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+ 
+  .password_edit .submit{
+    grid-column: 2;
+    text-align: center;
+  }
+  .password_edit .submit input{
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 7px;
+    background-color: yellowgreen;
+    color: white;
+    font-size:  18px;
+  }
+  
+  .password_edit label{
+    grid-column: 2;
+  }
+  .password_edit a{
+    grid-column: 2;
+  }
+  
+  
+  /*文字数のエラー*/
+  .reply-count-error{
+    display: none;
+    color: red;
+    text-align: center;
+  }
+  .post-count-error{
+    display: none;
+    color: red;
+  }
+  
+  
+}

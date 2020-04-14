@@ -1,0 +1,29 @@
+<div class="admin-container"> 
+    <%= render"groups/admin_menu" %>
+    <div class="admin-request">
+        <% if @members.any? %>
+            <% @members.each do |member| %>
+               <div class="request-index"> 
+                   <%= render "layouts/profile_image", user: member %>
+                   <div class="request-name-button">
+                       <div>
+                           <%= link_to member.name, user_path(member.id), class: "name" %>
+                       </div>
+                       <div class="request-buttons">
+                           <%= form_with(model: @group.members.find_by(user_id: member.id), local: true) do |f| %>
+                               <%= hidden_field_tag :group_id, @group.id %>
+                               <%= f.submit "承諾", class: 'yes' %>
+                           <% end %>
+                           <%= form_with(model: @group.members.find_by(user_id: member.id), local: true, method: :delete) do |f| %>
+                               <%= hidden_field_tag :group_id, @group.id %>
+                               <%= f.submit "拒否", class: "no" %>
+                           <% end %>
+                       </div>
+                   </div>
+               </div> 
+            <% end %>
+        <% else %>
+            <p>リクエストがありません</p>
+        <% end %>
+    </div>  
+</div> 

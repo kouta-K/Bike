@@ -1,0 +1,17 @@
+<div class="admin-container">   
+    <%= render"groups/admin_menu" %>
+    <div class="admin-member">
+        <% @group.members.where(activate: true).each do |member| %>
+            <div class="follow-user">
+                <%= render "layouts/profile_image", user: member.user %>
+                <div class="follow-menu">
+                    <span class="name"><%= link_to member.user.name, member.user %></span>
+                    <% unless member.user.id == @group.user_id %>
+                        <div><%= link_to "退会させる", member_path(member), method: :delete, class: "withdraw", data: {confirm: "本当に退会させますか？"} %></div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+            
+    </div>
+</div>

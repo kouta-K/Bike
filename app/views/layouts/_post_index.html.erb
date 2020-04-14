@@ -1,0 +1,114 @@
+<% posts.each do |post| %>
+    <div class="entire-post">
+        <div class="posts">
+            <%= render "layouts/profile_image", user: post.user %>
+            <p class="name"><%= link_to post.user.name, user_path(post.user.id) %></p>
+            <p class="post-created-at">
+                <%= post.created_at.strftime("%Y-%m-%d %H:%M") %>
+                <% unless post.reply_id.nil? %>
+                    返信先: <%= link_to Micropost.find(post.reply_id).user.name, Micropost.find(post.reply_id).user %>
+                <% end %>
+            </p>
+            <p class="content">
+                <%= link_to post.content, micropost_path(post), class: "micro-link" %>
+                <% unless post.images.empty? %>
+                    <span class="prev prev-modal1"><</span>
+                    <span class="slide-images">
+                        <% post.images.each do |img| %>
+                            <span class="modal"><%= image_tag img.image.url, class: "post-image" %></span>
+                        <% end %>
+                    </span>
+                    <span class="next next-modal1">></span>
+                <% end %>
+                <a class="post-link" href=<%= micropost_path(post) %>></a>
+            </p>
+        </div>
+        
+        <div class="post-favorite">
+            <div class="reply-modal-menu">
+                <span class="reply-modal"><i class="far fa-comment"></i></span>
+                <%= render "microposts/reply_form", object: post %>
+                <% if Micropost.where(reply_id: post.id).count != 0 %>
+                    <span><%= Micropost.where(reply_id: post.id).count %></span>
+                <% end %>
+            </div>
+            <div class="favorite-button">
+                <%= render "layouts/favorite_button", object: post %>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+<script>
+    $(function(){
+            $(".reply-modal").on("click", function(){
+               $(this).next().fadeIn(); 
+            });
+            
+            $(".close-button").on("click", function(){
+                $(".reply-modal-wrapper").fadeOut(); 
+            });
+            
+            
+            $(".slide-images").each(function(){
+               var $slide = $(this),
+                   $slides =  $(this).find(".modal"),
+                   slideCount = $slides.length,
+                   currentIndex = 0,
+                   timer;
+                   $slides.eq(currentIndex).fadeIn();
+                   if(!(slideCount === 1)){
+                       startTimer();
+                   }else{
+                       $slide.next().addClass("disable");
+                       $slide.prev().addClass("disable");
+                   }
+                   
+                   
+                   function showImage(){
+                      var nextIndex = (currentIndex + 1) % slideCount;
+                      $slides.eq(currentIndex).fadeOut();
+                      $slides.eq(nextIndex).fadeIn();
+                      currentIndex = nextIndex;
+                    }
+                    function startTimer(){
+                        if(!(slideCount === 1)){
+                            timer = setInterval(showImage, 4000); 
+                        }
+                    }
+                    function stopTimer(){
+                        clearInterval(timer);
+                    }
+                    
+                     $slide.prev().on("click", function(){
+                      $slides.eq(currentIndex).fadeOut();
+                      currentIndex -= 1;
+                      if(currentIndex < 0){
+                        currentIndex = slideCount-1;
+                      }
+                      nextIndex = (currentIndex + 1) % slideCount;
+                      $slides.eq(currentIndex).fadeIn();
+                    });
+                    
+                    $slide.next().on("click", function(){
+                      $slides.eq(currentIndex).fadeOut();
+                      currentIndex += 1;
+                      if(currentIndex > slideCount -1){
+                        currentIndex = 0;
+                      }
+                      nextIndex = (currentIndex + 1) % slideCount;
+                      $slides.eq(currentIndex).fadeIn();
+                    });
+                    
+                    $(".modal").on("click", function(){
+                        if($(this).hasClass("modal-style1")){
+                            startTimer(); 
+                        }else{
+                            stopTimer(); 
+                        }
+                    });
+            });
+        
+    });
+</script>
+

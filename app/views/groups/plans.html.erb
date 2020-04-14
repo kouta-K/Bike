@@ -1,0 +1,16 @@
+<div class="index-plans">
+    <p><%= link_to @group.name, @group %>の予定一覧</p>
+    <% @plans.each do |plan| %>
+        <div class="index-plan">
+            <div class="plan-menu">
+                <p>集合場所: <%= link_to plan.place, plan_path(plan), class: "place" %></p>
+                <%= link_to "メンバー #{plan.has_user.count}人", participates_path(plan_id: plan.id), class: "member" %>
+            </div>
+            <div>集合時間: <%= plan.datetime.strftime("%Y-%m-%d %H:%M") %></div>
+            <div class="about-plan">
+                予定について
+                <p class="content"><%= plan.content %></p>
+            </div>
+        </div>
+    <% end %>
+</div>

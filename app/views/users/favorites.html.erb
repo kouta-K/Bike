@@ -1,0 +1,5 @@
+<%= render "users/user_profile" %>
+<div>
+    <%= render "layouts/post_index", posts: @microposts %>
+</div>
+<%= paginate @microposts %>

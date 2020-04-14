@@ -1,0 +1,13 @@
+<div class="side-calendar">   
+    <%= month_calendar attribute: :datetime, events: @all_plans do |date, plans| %>
+        <%= date.day %>
+        <% plans.each do |plan| %>
+        <div class="plan <%= belongs_to_plan(plan) %> ">
+            <%= link_to plan.place, plan %>
+        </div>
+        <% end %>
+    <% end %>
+    <div class="participate">参加済み</div>
+    <div class="no-participate">未参加</div>
+</div> 
+    

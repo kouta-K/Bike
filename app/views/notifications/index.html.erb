@@ -1,0 +1,12 @@
+<% if @notifications.empty? %>
+    <p>現在通知はありません</p>
+<% else %>
+    <% @notifications.each do |notification| %>
+        <div class="notification">
+            <%= which_icon(notification) %>
+            <p><%= link_to notification.user.name, notification.user %>が<%= which_action(notification) %><%= particle(notification) %><%= notification.action %>しました</p>
+            <div><%= notification.created_at.strftime("%Y-%m-%d %H:%M") %></div>
+        </div>
+    <% end %>
+<% end %>
+

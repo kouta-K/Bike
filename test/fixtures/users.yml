@@ -1,0 +1,34 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Bob:
+  id: 1
+  name: test
+  email: test@co.jp
+  age: 18
+  password_digest: <%= User.digest("password") %>
+  activated: true
+  
+
+Michael:
+  id: 2
+  name: michael
+  email: test1@co.jp
+  age: 18
+  password_digest: <%= User.digest("password") %>
+  activated: true
+
+Porl:
+  id: 3
+  name: porl
+  email: test3@co.jp
+  age: 18
+  password_digest: <%= User.digest("password") %>
+  activated: false
+  
+Mike:
+  id: 4
+  name: mike
+  email: test4@co.jp
+  age: 20
+  password_digest: <%= User.digest("password") %>
+  activated: true

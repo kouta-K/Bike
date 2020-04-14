@@ -1,0 +1,19 @@
+<div class="groups">
+    <% @groups.each do |group| %>
+        <div class="group">
+            <div class="name-introduce">
+                <div class="group-image-name">
+                    <%= render "groups/group_image", group: group %>
+                    <p class="name"><%= link_to group.name, group_path(group.id), class: "group-name" %></p>
+                </div>
+                <div class="introduce-title">紹介</div>
+                <p class="introduce"><%= group.introduce %></p>
+            </div>
+            <div class="index">
+                <p>作成者: <%= link_to "#{group.user.name}", group.user %></p>
+                <p><%= link_to "メンバー#{group.members.where(activate: true).count}人", member_group_path(group) %></p>
+                <p>平均年齢: <%= average_age(group) %>歳</p>
+            </div>
+        </div>
+    <% end %>
+</div>

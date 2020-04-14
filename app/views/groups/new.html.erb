@@ -1,0 +1,17 @@
+<div class="group-form">
+    <h1>グループ新規作成</h1>
+    <%= form_with(model: @group, local: true) do |f| %>
+        <%= f.label :name, "グループ名" %>
+        <%= f.text_field :name %>
+        
+        <%= f.label :introduce, "紹介文" %>
+        <%= f.text_area :introduce %>
+        
+        <%= f.label :image, "グループ画像" %>
+        <%= f.file_field :image, class: "image" %>
+        <div>
+            <%= f.submit "作成", class: "submit" %>
+        </div>
+    <% end %>
+</div>
+

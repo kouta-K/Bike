@@ -1,0 +1,14 @@
+<div class="admin-menu close">
+    <div><%= link_to "メンバー #{ @group.members.where(activate: true).count}人", admin_member_group_path(@group), class: member_url %></div>
+    <div><%= link_to "リクエスト #{request_members(@group).count}人", requests_group_path(@group), class: request_url %></div>
+    <div><%= link_to "編集", edit_group_path(@group), class: edit_url %></div>
+    <div><%= link_to "ユーザー招待" , invited_group_path(@group), class: invited_url %></div>
+    <div><%= link_to "グループへ", @group, class: "group-url" %></div>
+    <div>
+        <%= form_with(model: @group, local: true, method: :delete, data: {confirm: "グループを消してもよろしいですか？"}) do |f| %>
+            <%= f.submit "削除", class: "delete" %>
+        <% end %>
+    </div> 
+    <span class="admin-menu-button">OPEN</span>
+    <div class="admin-background disable"></div>
+</div>

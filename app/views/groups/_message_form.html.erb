@@ -1,0 +1,35 @@
+<% if group_activate_member?(@group) %>
+    <div class="message-form">
+        <%= form_with(model: Message.new, local: true) do |f| %>
+            <div class="message-form-submit">
+                <%= hidden_field_tag :group_id, @group.id %>
+                <%= f.text_field :content, class: "text", placeholder: "グループチャット" %>
+                <%= f.submit "送信", class: "submit" %>
+            </div>
+            <%= f.file_field :image %>
+        <% end %>
+    </div>
+     <div>
+        <% @messages.each do |message| %>
+            <div class="messages">
+                <%= render "layouts/profile_image", user: message.user %>
+                <div class="name"><%= link_to message.user.name, user_path(message.user.id) %></div>
+                <div class="post-created-at"><%= message.created_at.strftime("%m-%d %H:%M") %></div>
+                <p>
+                    <%= message.content %>
+                    <% if message.image? %>
+                        <%= image_tag message.image.url, class: "post-image" %>
+                    <% end %>
+                </p>
+            </div>
+                <div class="message-delete">
+                    <% if correct_user?(message.user) %>
+                        <a id="delete" class="delete" data-confirm="メッセージを削除しますか？" rel="nofollow" data-method="delete" href=<%= message_path(message) %>><i class="far fa-trash-alt"></i></a>
+                    <% end %>
+                </div>
+        <% end %>
+    </div>
+    <%= paginate @messages %>
+<% else %>
+    <p>グループチャットに参加するにはグループに申請して許可をもらってください</p>
+<% end %>

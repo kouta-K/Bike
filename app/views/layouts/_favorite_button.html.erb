@@ -1,0 +1,16 @@
+<div class="favorite">
+    <% if current_user.has_favorites.include?(object) %>
+        <%= form_with(model: current_user.favorites.find_by(micropost_id: object.id), method: :delete, local: true, namespace: "#{object.id}") do |f| %>
+            <%= f.button type: "submit" do %>
+                <i class='fa fa-star star-favorite'></i>
+            <% end %>
+        <% end %>
+    <% else %>
+        <%= form_with(model: current_user.favorites.build, local: true, namespace: "#{object.id}") do |f| %>
+            <%= f.hidden_field :micropost_id, value: object.id %>
+            <%= f.button type: "submit" do %>
+                <i class="far fa-star star-unfavorite"></i>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>

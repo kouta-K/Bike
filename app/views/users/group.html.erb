@@ -1,0 +1,5 @@
+<p class="user-plan-top"><%= @user.name %>の所属グループ</p>
+<div class="group-index">
+    <%= render "groups/group_index" %>
+</div>
+<%= paginate @groups %>

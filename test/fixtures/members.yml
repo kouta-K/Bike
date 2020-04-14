@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+One:
+  user_id: 1
+  group_id: 1
+  activate: true
+  
+Two:
+  user_id: 2
+  group_id: 1
+  activate: false
+
+Three:
+  user_id: 4
+  group_id: 1
+  activate: true
+  
