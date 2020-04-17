@@ -13,7 +13,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     assert current_user, @Bob
     get micropost_path(@micropost2)
     assert_difference "Favorite.count", 1 do
-      post favorites_path, params: {micropost_id: @micropost2.id}
+      post favorites_path, params: {favorite: {micropost_id: @micropost2.id}}
     end
   end
   
