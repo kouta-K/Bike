@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       flash[:success] = "プロフィールを編集しました"
       redirect_to current_user
     else
-      flash.now[:danger] = "編集失敗"      
+      flash.now[:danger] = "#{params[:user][:image]}"      
       render "users/edit"
     end
   end 

@@ -24,9 +24,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  if Rails.env.development?
-    storage :file
-  elsif Rails.env.test?
+  if Rails.env.development? || Rails.env.test?
     storage :file
   else
     storage :fog
@@ -44,8 +42,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
   end
  
- # ファイル名を日付にするとタイミングのせいでサムネイル名がずれる
- #ファイル名はランダムで一意になる
+
   def filename
     "#{secure_token}.#{file.extension}" if original_filename.present?
   end
