@@ -15,10 +15,10 @@
     <title>Myapp</title>
   </head>
   <body>
-    <% if flash.any? %>
-      <%= render "layouts/flash" %>
-    <% end %>
     <% if login? %>
+      <% if flash.any? %>
+        <%= render "layouts/flash" %>
+      <% end %>
       <div class="container">
         <%= render "layouts/nav" %>
         <div class="main">
@@ -29,6 +29,10 @@
         </div>
       </div>
     <% else %>
+      <%= render "layouts/no-login-header" %>
+      <% if flash.any? %>
+        <%= render "layouts/flash" %>
+      <% end %>
       <%= yield %>
     <% end %>
     <script>
