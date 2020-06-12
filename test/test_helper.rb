@@ -24,5 +24,4 @@ class ActionDispatch::IntegrationTest
                       password: "password"
     }}
   end 
-
 end 

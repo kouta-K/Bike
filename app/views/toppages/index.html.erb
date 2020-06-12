@@ -1,2 +1,6 @@
-<%= render "layouts/post_index", posts: @microposts %>
-<%= paginate @microposts %>
+<% unless current_user.nil? %>
+  <%= render "layouts/post_index", posts: @microposts %>
+  <%= paginate @microposts %>
+<% else %>
+  <%= render "layouts/no-login-page" %>
+<% end %>

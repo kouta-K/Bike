@@ -1,7 +1,8 @@
 class ToppagesController < ApplicationController
-  before_action :require_login
   def index
-    @microposts = my_post_and_follow_user_post.order(created_at: :desc).page(params[:page])
+    unless current_user.nil?
+      @microposts = my_post_and_follow_user_post.order(created_at: :desc).page(params[:page])
+    end
   end
   
   private

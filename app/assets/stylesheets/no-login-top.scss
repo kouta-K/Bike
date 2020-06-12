@@ -1,0 +1,198 @@
+#navi{
+  padding: 15px 0;
+  a{
+    text-decoration: none;
+  }
+  .login-link, .signup-link{
+    color: black;
+    font-size: 20px;
+  }
+  .top-link{
+    color: green;
+    display: inline-block;
+    font-size: 30px;
+    font-family: serif;
+    letter-spacing: 6px;
+  }
+}
+
+#main{
+  #app-explain{
+    font-size: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 70px auto;
+    line-height: 37px;
+  }
+  
+  #title-feature{
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 9px;
+    font-size: 30px;
+    font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+  }
+  #app-func-explain{
+    .content{
+      width: 80%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: 1px solid black;
+      background-color: rgba(0, 200, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      padding: 8px;
+      
+      p{
+        width: 80%;
+        font-size: 18px;
+        position: relative;
+        right: 0;
+        left: 0;
+        margin: auto;
+        padding: 10px;
+        line-height: 30px;
+      }
+    }
+  }
+  
+  .fa-user-friends, .fa-paper-plane, .fa-search{
+    font-size: 100px;
+  }
+  
+  #slide-image{
+    margin-top: 60px;
+    .slide-content{
+      width: 100%;
+      height: 100%;
+    }
+    .slide-btn{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-size: 40px;
+      span{
+        position: absolute;
+        top: 50%;
+      }
+      .prev-btn{
+        right: 50%;
+      }
+      .next-btn{
+        left: 50%;
+      }
+    }
+    #slide-images{
+      display: inline-block;
+      border: 1px gray solid;
+    }
+  }
+}
+@media(max-width: 1435px) and (min-width: 1345px){
+  #app-func-explain{
+    .content{
+      height: 250px;
+    }
+  }
+}
+@media(max-width: 1105px) and (min-width: 1020px){
+  #app-func-explain{
+    .content{
+      height: 270px;
+    }
+  }
+}
+@media(max-width: 884px) and (min-width: 840px){
+  #app-func-explain{
+    .content{
+      height: 300px;
+    }
+  }
+}
+
+@media(max-width: 790px) and (min-width: 630px){
+  #app-func-explain{
+    .content{
+      height: 320px;
+    }
+  }
+}
+
+
+@media(min-width: 630px){
+  #navi{
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+  }
+  #app-func-explain{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #slide-image{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+}
+
+@media(max-width: 629px){
+  #navi{
+    width: 100%;
+    .top-div{
+      margin-bottom: 40px;
+      a{
+        font-size: 35px;
+      }
+    }
+    .login-div, .signup-div{
+      border: 1px solid rgba(0, 200, 0, 0.2);
+      text-align: center;
+      position: absolute;
+    }
+    .login-div{
+      width: 49%;
+      top: 80px;
+      left: 0;
+      a{
+        color: rgba(0, 200, 0, 0.6);
+      }
+    }
+    .signup-div{
+      top: 80px;
+      left: 49%;
+      background-color: rgba(0, 200, 0, 0.2);
+      width: 50%;
+      a{
+        color: white;
+      }
+    }
+  }
+  #app-func-explain > div{
+    margin-bottom: 30px;
+  }
+  #slide-image{
+    display: grid;
+    grid-template-rows: 100%;
+    #slide-images{
+      grid-row: 1;
+    }
+    .next-btn{
+      margin-left: 5px;
+    }
+    .prev-btn{
+      margin-right: 5px;
+    }
+  }
+  
+}
+
+@media(max-width: 350px){
+  #navi{
+    .top-div{
+      a{
+        font-size: 28px;
+      }
+    }
+  }
+}

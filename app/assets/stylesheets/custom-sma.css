@@ -732,6 +732,7 @@
   }
   .login h1{
     text-align:center;
+    margin-top: 40px;
   }
   .login-form label{
     grid-column: 2;
@@ -780,6 +781,7 @@
   }
   .signup h1{
     text-align:center;
+    margin-top: 40px;
   }
   .signup-form label{
     grid-column: 2;
@@ -1673,6 +1675,7 @@
   .password_reset h2{
     text-align: center;
     margin-bottom: 50px;
+    margin-top: 40px;
   }
   .password_reset form{
     grid-template-columns: 10% 80% 10%;
@@ -1719,6 +1722,7 @@
   /*パスワード再設定ページ*/
   .password_edit h2{
     text-align: center;
+    margin-top: 40px;
     margin-bottom: 50px;
   }
   .password_edit form{
